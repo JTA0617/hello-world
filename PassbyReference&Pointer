@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+void swapByRef(int &num1, int &num2)
+{
+	int temp = num1;
+	num1 = num2;
+	num2 = temp;
+}
+
+void swapByPointers(int * num1, int *num2)
+{
+	
+	int temp = *num1;
+	*num1 = *num2;
+	*num2 = temp;
+}
+
+int main ()
+{
+	int num1, num2;
+	
+	cout << "Enter the first integer value: ";
+	cin >> num1; 
+	cout << "Enter the second integer value: ";
+	cin >> num2;
+	cout << "Before Pass by Reference & pointer: " << endl;
+	cout << "num1 = " << num1 << " and mum2 = " << num2 << endl;
+	swapByRef(num1, num2);
+	cout << "After pass by reference:" << endl;
+	cout << "num1 = " << num1 << " and num2 = " << num2 << endl;
+
+	swapByPointers(&num1, &num2);
+	cout << "After pass by pointer:" << endl;
+	cout << "num1 = " << num1 << " and num2 = " << num2 << endl;
+
+	return 0;
+}
